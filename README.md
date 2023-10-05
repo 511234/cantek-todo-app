@@ -1,5 +1,8 @@
 ## Typescript + Vite + React To-do app
 
+Preview
+[Demo](screenshot.png)
+
 ### Functionalities
 
 - Enter task title to list
