@@ -1,7 +1,7 @@
 ## Typescript + Vite + React To-do app
 
 Preview
-[Demo](screenshot.png)
+![Demo](screenshot.png)
 
 ### Functionalities
 
