@@ -19,9 +19,12 @@ function App() {
         }
 
         const itemIndex = todoLsItems.indexOf(todoItem)
-        const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
-        todoItems[itemIndex] = editRef.current.value
-        setTodoLsItems(todoItems)
+
+        setTodoLsItems((prev) => {
+            const newArr = [...prev]
+            newArr[itemIndex] = editRef.current.value
+            return newArr
+        })
         setEditTitle('')
     }
 
