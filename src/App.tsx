@@ -5,7 +5,7 @@ import {TodoItem} from "./TodoItem.tsx";
 function App() {
 
     const [editTitle, setEditTitle] = useState<string | null>(null)
-    const [todoLsItems, setTodoLsItems] = useState<string[]>(JSON.parse(localStorage.getItem('cantek-todo')))
+    const [todoLsItems, setTodoLsItems] = useState<string[]>(JSON.parse(localStorage.getItem('cantek-todo')) ?? [])
     const editRef = useRef<HTMLInputElement>()
     const titleRef = useRef<HTMLInputElement>()
 
