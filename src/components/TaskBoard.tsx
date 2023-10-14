@@ -8,11 +8,11 @@ interface ITaskBoardProps {
 }
 
 export const TaskBoard = ({todoLsItems, handleRemove}: ITaskBoardProps) => {
-    return (<div className="d-flex flex-grow-1 w-75">
+    return (<div className="d-flex flex-grow-1 col-md-8 col-12">
         {todoLsItems.length == 0 && <div>Please Create Tasks</div>}
         {todoLsItems.length > 0 &&
 
-            <Table striped bordered hover size="lg" className="text-center">
+            <Table striped bordered hover size="lg" className="text-center mt-3 mt-md-0">
                 <thead>
                 <tr>
                     <th>Title</th>

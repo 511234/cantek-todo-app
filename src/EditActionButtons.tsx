@@ -1,5 +1,5 @@
-import REMOVE_ICON from './imgs/remove.png'
 import Button from 'react-bootstrap/Button';
+import {AiFillDelete} from "react-icons/ai";
 
 interface IEditActionButtons {
     handleRemove: (i) => void;
@@ -8,8 +8,9 @@ interface IEditActionButtons {
 
 export const EditActionButtons = ({handleRemove, i}: IEditActionButtons) => {
     return (<>
-        <Button size="sm" variant="light" className="" type="button" onClick={() => handleRemove(i)}>
-            <img alt="remove" className="w-25" src={REMOVE_ICON}/>
+        <Button variant="none" className="" type="button"
+                onClick={() => handleRemove(i)}>
+            <AiFillDelete/>
         </Button>
 
     </>)

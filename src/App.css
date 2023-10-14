@@ -7,7 +7,7 @@
 
 #root {
     margin: 3rem;
-    padding: 3rem;
+    padding: 2rem;
     gap: 40px;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@ table > tr > td:nth-of-type(1) {
 }
 
 #main-content-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*gap: 2rem;*/
 }

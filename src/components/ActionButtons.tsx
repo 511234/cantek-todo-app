@@ -17,7 +17,7 @@ export const ActionButtons = ({shouldShowModal, setShouldShowModal}: IActionButt
 
     return (
         <>
-            <div className="w-50">
+            <div className="col-md-4 col-12">
                 <div className="d-flex flex-column align-items-center gap-4">
                     <RBButton
                         disabled={shouldShowModal}

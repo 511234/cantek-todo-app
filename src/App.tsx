@@ -52,7 +52,7 @@ function App() {
             }
 
 
-            <div id="main-content-wrapper">
+            <div id="main-content-wrapper" className="row">
                 <ActionButtons shouldShowModal={shouldShowModal} setShouldShowModal={setShouldShowModal}/>
                 <TaskBoard handleRemove={handleRemove} todoLsItems={todoLsItems}/>
             </div>
