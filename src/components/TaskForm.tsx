@@ -5,7 +5,7 @@ import {taskSchema} from "../schema/task.ts";
 import {TextField} from "../ui/TextField.tsx";
 import {SelectField} from "../ui/SelectField.tsx";
 import {MutableRefObject} from "react";
-import Button from "react-bootstrap/Button";
+import {RBButton} from "../ui/RBButton.tsx";
 
 interface ITaskForm {
     handleSubmit: (values, props) => void;
@@ -19,11 +19,13 @@ export const TaskForm = ({handleSubmit, titleRef}: ITaskForm) => {
             onSubmit={handleSubmit}
             validationSchema={taskSchema}
         >
-            <Form className="d-flex flex-column left">
+            <Form className="d-flex flex-column gap-3">
                 <TextField label="title" name="Todo Title" ref={titleRef}/>
-                <SelectField label="Category" name="category" optionList={CATEGORIES}/>
+                <SelectField label="Category" name="Category" optionList={CATEGORIES}/>
                 <TextField label="dueDate" name="Due Date" type="date"/>
-                <Button type="submit">Add</Button>
+                <div className="d-flex justify-content-end" id="submit-section">
+                    <RBButton className="mt-1" variant="outline-success" type="submit" label="Submit"/>
+                </div>
             </Form>
         </Formik>)
 

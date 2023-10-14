@@ -10,7 +10,7 @@ export const RBModal = ({children, handleCloseModal, heading}: IRBModalProps) =>
 
     return (
         <>
-            <Modal show={true} onHide={handleCloseModal}>
+            <Modal className="w-100 h-100" style={{fontFamily: 'Mukta'}} centered show={true} onHide={handleCloseModal}>
                 <Modal.Header closeButton>
                     <Modal.Title>{heading}</Modal.Title>
                 </Modal.Header>

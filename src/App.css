@@ -6,12 +6,22 @@
 }
 
 #root {
-    margin: 3rem;
+    width: 100%;
     padding: 2rem;
-    gap: 40px;
     display: flex;
     flex-direction: column;
-    font-family: mukta;
+    font-family: 'Mukta' !important;
+    --bs-body-font-family: 'Mukta' !important;
+}
+
+#root > * {
+    margin: 0.5rem 0.05rem;
+}
+
+@media only screen and (min-width: 600px) {
+    #root > * {
+        margin: 1rem;
+    }
 }
 
 table {

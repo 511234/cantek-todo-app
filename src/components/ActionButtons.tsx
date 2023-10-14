@@ -6,13 +6,24 @@ import {AiFillSetting} from "react-icons/ai";
 
 interface IActionButtonsProps {
     shouldShowModal: boolean;
+    shouldShowSetting: boolean;
     setShouldShowModal: React.Dispatch<SetStateAction<boolean>>
+    setShouldShowSetting: React.Dispatch<SetStateAction<boolean>>
 }
 
-export const ActionButtons = ({shouldShowModal, setShouldShowModal}: IActionButtonsProps) => {
+export const ActionButtons = ({
+                                  shouldShowModal,
+                                  shouldShowSetting,
+                                  setShouldShowModal,
+                                  setShouldShowSetting
+                              }: IActionButtonsProps) => {
 
     const handleClickAddTask = () => {
         setShouldShowModal(true)
+    }
+
+    const handleClickSetting = () => {
+        setShouldShowSetting(true)
     }
 
     return (
@@ -25,10 +36,10 @@ export const ActionButtons = ({shouldShowModal, setShouldShowModal}: IActionButt
                         icon={<BiSolidMessageSquareAdd/>}
                         onClick={handleClickAddTask}/>
                     <RBButton
+                        disabled={shouldShowSetting}
                         label="Set preferences (WIP)"
                         icon={<AiFillSetting/>}
-                        onClick={() => {
-                        }}
+                        onClick={handleClickSetting}
                         variant="outline-secondary"
                     />
                     <RBButton
