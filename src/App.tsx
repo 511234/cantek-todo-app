@@ -18,7 +18,7 @@ function App() {
     const [shouldShowSetting, setShouldShowSetting] = useState(false)
     const [todoLsItems, setTodoLsItems] = useState<ITask[]>(JSON.parse(localStorage.getItem('cantek-todo')) ?? [])
     const titleRef = useRef<HTMLInputElement>()
-    const [, setLs] = useLocalStorage(['nickname'])
+    const [ls, setLs] = useLocalStorage(['nickname', 'closeOnAddNew'])
 
     const handleCloseModal = () => {
         setShouldShowModal(false)
@@ -34,7 +34,6 @@ function App() {
     }
 
     const handleSubmit = (values, {resetForm}) => {
-        console.log('values', values)
         const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
         values.dueDate = dayjs(values.dueDate).format("YYYY-MM-DD")
         values.id = todoItems.length + 1
@@ -43,7 +42,9 @@ function App() {
         setTodoLsItems(todoItems)
         resetForm()
         titleRef?.current?.focus()
-        handleCloseModal()
+        if (ls.closeOnAddNew) {
+            handleCloseModal()
+        }
     }
 
     const handleSubmitSetting = (values) => {
