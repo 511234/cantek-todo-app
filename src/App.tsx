@@ -1,6 +1,7 @@
 import {useEffect, useRef, useState} from 'react'
 import './App.css'
 import {ITask} from "./types";
+import {TaskRow} from "./components/TaskRow.tsx";
 import dayjs from "dayjs";
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import {TaskForm} from "./components/TaskForm.tsx";
@@ -53,23 +54,23 @@ function App() {
             </Formik>
 
             {todoLsItems.length == 0 && <div>Please Create Tasks</div>}
-            {todoLsItems.length > 0 && <div>test 11</div>
-                // <Table striped bordered hover className="text-center">
-                //     <thead>
-                //     <tr>
-                //         <th>Title</th>
-                //         <th>Due Date</th>
-                //         <th>Category</th>
-                //         <th>Actions</th>
-                //     </tr>
-                //     </thead>
-                //     <tbody>
-                //     {todoLsItems.map((item, i) =>
-                //         <TaskRow key={item.title}
-                //                  handleRemove={handleRemove}
-                //                  i={i} todoItem={item}/>)}
-                //     </tbody>
-                // </Table>
+            {todoLsItems.length > 0 &&
+                <table className="text-center">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Due Date</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {todoLsItems.map((item, i) =>
+                        <TaskRow key={item.title}
+                                 handleRemove={handleRemove}
+                                 i={i} todoItem={item}/>)}
+                    </tbody>
+                </table>
             }
 
         </>
