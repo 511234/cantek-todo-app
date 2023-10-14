@@ -15,7 +15,7 @@ export const EditActionButtons = ({handleCancel, handleConfirm, handleRemove, i,
         <Button className="d-none" type="button" onClick={() => handleConfirm(todoItem)}>Confirm</Button>
         <Button className="d-none" type="button" onClick={handleCancel}>Cancel</Button>
         <Button size="sm" variant="light" className="" type="button" onClick={() => handleRemove(i)}>
-            <img className="w-25" src={REMOVE_ICON}/>
+            <img alt="remove" className="w-25" src={REMOVE_ICON}/>
         </Button>
 
     </>)
