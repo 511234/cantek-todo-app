@@ -5,6 +5,7 @@ import {TaskRow} from "./components/TaskRow.tsx";
 import * as dayjs from "dayjs";
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {TaskForm} from "./components/TaskForm.tsx";
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
 
     return (
         <>
-            {/*<TaskForm handleSubmit={handleSubmit} titleRef={titleRef}/>*/}
+            <TaskForm handleSubmit={handleSubmit} titleRef={titleRef}/>
 
             {todoLsItems.length == 0 ? <div>Please Create Tasks</div> :
                 <Table striped bordered hover size="lg" className="text-center">
