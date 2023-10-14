@@ -58,15 +58,20 @@ function App() {
 
             {todoLsItems.length == 0 ? <div>Please Create Tasks</div> :
                 <Table striped bordered hover size="lg" className="text-center">
+                    <thead>
                     <tr>
                         <th>Title</th>
                         <th>Due Date</th>
                         <th>Category</th>
                         <th>Actions</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     {todoLsItems.map((item, i) =>
-                        <TaskRow handleCancel={handleCancel} handleConfirm={handleConfirm} handleRemove={handleRemove}
+                        <TaskRow key={item.title} handleCancel={handleCancel} handleConfirm={handleConfirm}
+                                 handleRemove={handleRemove}
                                  i={i} todoItem={item}/>)}
+                    </tbody>
                 </Table>
             }
 

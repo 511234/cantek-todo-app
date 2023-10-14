@@ -12,7 +12,7 @@ export const SelectField = ({label, name, optionList}: ISelectField) => {
             <label htmlFor={name}>{name}</label>
             <FastField as="select" name={label}>
                 {optionList.map((category) =>
-                    <option value={category}>{category}</option>
+                    <option key={category} value={category}>{category}</option>
                 )}
             </FastField>
             <ErrorMessage name={label}>
