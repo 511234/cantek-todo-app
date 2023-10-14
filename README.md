@@ -6,6 +6,10 @@
 - 💻 Save your tasks on local storage
 - 📖 Read tips on how to get productive
 
+## Screenshot
+
+![Task Manager Screenshot](./screenshot.png)
+
 ### Tech Stack & Libraries:
 
 ```
