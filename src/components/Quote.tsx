@@ -9,7 +9,10 @@ export const Quote = () => {
     const handleSaveQuoteToCookie = async () => {
         if (!cookies.quote) {
             const newQuote = (await fetchQuote()).data?.[0]
-            setCookie("quote", newQuote)
+            const today = new Date()
+            const tomorrow = new Date(today)
+            tomorrow.setDate(today.getDate() + 1)
+            setCookie("quote", newQuote, {expires: tomorrow})
         }
     }
 

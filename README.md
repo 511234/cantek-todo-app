@@ -27,4 +27,13 @@ Agnieszka Boeske</a>
 on <a href="https://unsplash.com/photos/ky0ljKGar78?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
 Unsplash</a>
 <a href="https://www.flaticon.com/free-icons/quote" title="quote icons">Quote icons created by Freepik - Flaticon</a>
-  
+
+### Todos
+
+- add name for greeting
+- change board layout (card + shadow)
+- add setting (close on new task)
+- fix task layout
+- edit task
+- group task view
+- usecontext theme

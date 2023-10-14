@@ -5,13 +5,12 @@
 }
 
 .quote-text {
-    font-style: italic;
+    font-family: Montserrat;
     font-weight: bold;
-    letter-spacing: 0.12rem;
     background-color: #fff;
     top: 50%;
-    font-size: 1.8rem;
-    width: 100%;
+    font-size: 1.5rem;
+    width: 101%;
     opacity: 50%;
     text-align: center;
     word-break: break-all;

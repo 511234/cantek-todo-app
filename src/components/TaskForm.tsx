@@ -15,7 +15,7 @@ interface ITaskForm {
 export const TaskForm = ({handleSubmit, titleRef}: ITaskForm) => {
     return (
         <Formik
-            initialValues={{title: "", dueDate: dayjs().format("YYYY-MM-DD"), category: CATEGORIES[0]}}
+            initialValues={{title: "", dueDate: dayjs().format('YYYY-MM-DD'), category: CATEGORIES[0]}}
             onSubmit={handleSubmit}
             validationSchema={taskSchema}
         >
@@ -26,4 +26,5 @@ export const TaskForm = ({handleSubmit, titleRef}: ITaskForm) => {
                 <Button type="submit">Add</Button>
             </Form>
         </Formik>)
+
 }
