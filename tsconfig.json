@@ -17,7 +17,6 @@
     /* Linting */
     "strict": false,
     "noUnusedLocals": false,
-    "noUnusedVar": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
