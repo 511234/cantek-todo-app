@@ -20,7 +20,7 @@ export const TaskForm = ({handleSubmit, titleRef}: ITaskForm) => {
         >
             <Form className="d-flex flex-column gap-3">
                 <TextField label="title" name="Todo Title" ref={titleRef}/>
-                <SelectField label="Category" name="Category" optionList={CATEGORIES}/>
+                <SelectField label="Category" name="category" optionList={CATEGORIES}/>
                 <TextField label="dueDate" name="Due Date" type="date"/>
                 <div className="d-flex justify-content-end" id="submit-section">
                     <RBButton className="mt-1" variant="outline-success" type="submit" label="Submit"/>

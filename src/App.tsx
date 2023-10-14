@@ -34,6 +34,7 @@ function App() {
     }
 
     const handleSubmit = (values, {resetForm}) => {
+        console.log('values', values)
         const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
         values.dueDate = dayjs(values.dueDate).format("YYYY-MM-DD")
         todoItems.push(values)

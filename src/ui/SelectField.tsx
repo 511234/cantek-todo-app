@@ -9,8 +9,8 @@ interface ISelectField {
 export const SelectField = ({label, name, optionList}: ISelectField) => {
     return (
         <div className="d-flex flex-column">
-            <label className="fw-bolder" htmlFor={name}>{name}</label>
-            <FastField as="select" className="px-2 mr-3 border-1 rounded-3 border-dark" name={label}>
+            <label className="fw-bolder" htmlFor={name}>{label}</label>
+            <FastField as="select" className="px-2 mr-3 border-1 rounded-3 border-dark" name={name}>
                 {optionList.map((category) =>
                     <option key={category} value={category}>{category}</option>
                 )}
