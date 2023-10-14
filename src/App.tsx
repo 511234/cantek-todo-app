@@ -2,7 +2,7 @@ import {useEffect, useRef, useState} from 'react'
 import './App.css'
 import {ITask} from "./types";
 import {TaskRow} from "./components/TaskRow.tsx";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import {TaskForm} from "./components/TaskForm.tsx";
@@ -26,7 +26,9 @@ function App() {
     const handleSubmit = (values, {resetForm}) => {
 
         const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
+        console.log('hi 1')
         values.dueDate = dayjs(values.dueDate).format("YYYY-MM-DD")
+        console.log('values.dueDate', values.dueDate)
 
         todoItems.push(values)
         localStorage.setItem('cantek-todo', JSON.stringify(todoItems))
