@@ -1,6 +1,6 @@
 export interface ITask {
     id: number;
     title: string;
-    dueDate: Date;
+    dueDate: string;
     category: string;
 }

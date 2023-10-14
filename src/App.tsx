@@ -3,6 +3,7 @@ import './App.css'
 import {ITask} from "./types";
 import {TaskRow} from "./components/TaskRow.tsx";
 import dayjs from "dayjs";
+import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import {TaskForm} from "./components/TaskForm.tsx";
 import CATEGORIES from "./categories.ts";
@@ -55,7 +56,7 @@ function App() {
 
             {todoLsItems.length == 0 && <div>Please Create Tasks</div>}
             {todoLsItems.length > 0 &&
-                <table className="text-center">
+                <Table striped bordered hover size="lg" className="text-center">
                     <thead>
                     <tr>
                         <th>Title</th>
@@ -68,9 +69,10 @@ function App() {
                     {todoLsItems.map((item, i) =>
                         <TaskRow key={item.title}
                                  handleRemove={handleRemove}
-                                 i={i} todoItem={item}/>)}
+                                 i={i} todoItem={item}/>)
+                    }
                     </tbody>
-                </table>
+                </Table>
             }
 
         </>
