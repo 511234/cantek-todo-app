@@ -5,7 +5,13 @@ import {TaskRow} from "./components/TaskRow.tsx";
 import dayjs from "dayjs";
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {TaskForm} from "./components/TaskForm.tsx";
+// import {TaskForm} from "./components/TaskForm.tsx";
+import CATEGORIES from "./categories.ts";
+import {taskSchema} from "./schema/task.ts";
+import {Form, Formik} from "formik";
+import {TextField} from "./ui/TextField.tsx";
+import {SelectField} from "./ui/SelectField.tsx";
+import Button from "react-bootstrap/Button";
 
 function App() {
 
@@ -35,7 +41,18 @@ function App() {
 
     return (
         <>
-            <TaskForm handleSubmit={handleSubmit} titleRef={titleRef}/>
+            <Formik
+                initialValues={{title: "", dueDate: dayjs().format('YYYY-MM-DD'), category: CATEGORIES[0]}}
+                onSubmit={handleSubmit}
+                validationSchema={taskSchema}
+            >
+                <Form className="d-flex flex-column left">
+                    <TextField label="title" name="Todo Title" ref={titleRef}/>
+                    <SelectField label="Category" name="category" optionList={CATEGORIES}/>
+                    <TextField label="dueDate" name="Due Date" type="date"/>
+                    <Button type="submit">Add</Button>
+                </Form>
+            </Formik>
 
             {todoLsItems.length == 0 && <div>Please Create Tasks</div>}
             {todoLsItems.length > 0 &&
@@ -57,6 +74,7 @@ function App() {
                     </tbody>
                 </Table>
             }
+
         </>
     )
 }
