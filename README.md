@@ -18,3 +18,8 @@ Preview
 3. View task list on the right
 4. Delete task by pressing 'Remove'
 5. Update task by pressing 'Update' and modify title, press 'Cancel' to abort
+
+### Attribution
+
+<a href="https://www.flaticon.com/free-icons/remove" title="remove icons">Remove icons created by alkhalifi design -
+Flaticon</a>

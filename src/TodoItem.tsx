@@ -7,6 +7,7 @@ export const TodoItem = ({
                              handleConfirm,
                              handleRemove,
                              handleUpdatePopup,
+                             i,
                              todoItem
                          }) => {
     return (<div>
@@ -15,7 +16,7 @@ export const TodoItem = ({
         <button type="button" onClick={() => handleRemove(todoItem)}>Remove</button>
         {editTitle === todoItem ?
             <EditActionButtons handleCancel={handleCancel}
-                               handleConfirm={handleConfirm} todoItem={todoItem}/> :
+                               handleConfirm={handleConfirm} handleRemove={handleRemove} i={i} todoItem={todoItem}/> :
             <button type="button" onClick={() => handleUpdatePopup(todoItem)}>Update</button>}
 
     </div>)

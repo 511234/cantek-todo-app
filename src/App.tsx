@@ -1,58 +1,50 @@
 import {useEffect, useRef, useState} from 'react'
 import './App.css'
-import {TodoItem} from "./TodoItem.tsx";
+import {ITask} from "./types";
+import {TaskRow} from "./components/TaskRow.tsx";
+import * as dayjs from "dayjs";
+import Table from 'react-bootstrap/Table';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {TaskForm} from "./components/TaskForm.tsx";
 
 function App() {
 
-    const [editTitle, setEditTitle] = useState<string | null>(null)
-    const [todoLsItems, setTodoLsItems] = useState<string[]>(JSON.parse(localStorage.getItem('cantek-todo')) ?? [])
+    const [todoLsItems, setTodoLsItems] = useState<ITask[]>(JSON.parse(localStorage.getItem('cantek-todo')) ?? [])
     const editRef = useRef<HTMLInputElement>()
     const titleRef = useRef<HTMLInputElement>()
 
     const handleCancel = () => {
-        setEditTitle('')
     }
 
     const handleConfirm = (todoItem: string) => {
         if (!editRef.current.value) {
             return
         }
+        console.log('todoItem', todoItem)
 
-        const itemIndex = todoLsItems.indexOf(todoItem)
-
-        setTodoLsItems((prev) => {
-            const newArr = [...prev]
-            newArr[itemIndex] = editRef.current.value
-            return newArr
-        })
-        setEditTitle('')
     }
 
-    const handleUpdatePopup = (todoItem: string) => {
-        setEditTitle(todoItem)
-    }
 
-    const handleRemove = (todoItem: string) => {
-        const todoItems = todoLsItems.filter((item) => item !== todoItem)
+    const handleRemove = (i: number) => {
+        console.log('handleRemove')
+        console.log('i', i)
+        const todoItems = todoLsItems.filter((item, index) => i !== index)
+        console.log('todoItems', todoItems)
         setTodoLsItems(todoItems)
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const handleSubmit = (values, {resetForm}) => {
 
-        if (todoLsItems.indexOf(titleRef?.current?.value) > -1) {
-            return
-        }
-
-        if (!titleRef?.current?.value) {
-            return
-        }
         const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
-        todoItems.push(titleRef.current.value)
+        values.dueDate = dayjs(values.dueDate).format("YYYY-MM-DD")
+
+        console.log('values', values)
+        todoItems.push(values)
         localStorage.setItem('cantek-todo', JSON.stringify(todoItems))
         setTodoLsItems(todoItems)
-        titleRef.current.value = ''
-
+        resetForm()
+        titleRef?.current?.focus()
     }
 
     useEffect(() => {
@@ -61,27 +53,23 @@ function App() {
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="todo-input-section">
-                <label htmlFor="todo-title">Todo item title</label>
-                <input type="text" name="title" id="todo-title" placeholder="Input todo..." ref={titleRef}
-                />
-                <button type="submit">Add</button>
-            </form>
 
-            <div className="todo-list-section">
-                {todoLsItems.length === 0 || todoLsItems.length === 1 && todoLsItems[0] === null ? 'No todos found' :
-                    <ul>
-                        {todoLsItems.map((todoItem) => <TodoItem editRef={editRef}
-                                                                 editTitle={editTitle}
-                                                                 key={todoItem}
-                                                                 handleCancel={handleCancel}
-                                                                 handleConfirm={handleConfirm}
-                                                                 handleRemove={handleRemove}
-                                                                 handleUpdatePopup={handleUpdatePopup}
-                                                                 todoItem={todoItem}/>)}
-                    </ul>
-                }
-            </div>
+            <TaskForm handleSubmit={handleSubmit} titleRef={titleRef}/>
+
+            {todoLsItems.length == 0 ? <div>Please Create Tasks</div> :
+                <Table striped bordered hover size="lg" className="text-center">
+                    <tr>
+                        <th>Title</th>
+                        <th>Due Date</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                    {todoLsItems.map((item, i) =>
+                        <TaskRow handleCancel={handleCancel} handleConfirm={handleConfirm} handleRemove={handleRemove}
+                                 i={i} todoItem={item}/>)}
+                </Table>
+            }
+
         </>
     )
 }

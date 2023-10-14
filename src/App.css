@@ -1,15 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Cookie&family=Mukta:wght@200&family=Tinos&display=swap");
+
+
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-    display: flex;
-    gap: 40px
-}
-
-
-.todo-input-section {
-    text-align: left;
+    margin: 3rem;
+    padding: 3rem;
+    gap: 40px;
     display: flex;
     flex-direction: column;
+    font-family: mukta;
+}
+
+table > tr > td {
+    width: 2rem;
+}
+
+table > tr > td:nth-of-type(1) {
+    width: 6rem;
+    word-wrap: anywhere;
 }
