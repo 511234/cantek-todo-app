@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
 
+
+// TODO: improve performance
 export const useLocalStorage = (keys: string[]) => {
 
     const getLs = () => {

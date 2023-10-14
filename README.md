@@ -30,9 +30,7 @@ Unsplash</a>
 
 ### Todos
 
-- add name for greeting
 - change board layout (card + shadow)
-- add setting (close on new task)
 - fix task layout
 - edit task
 - group task view
