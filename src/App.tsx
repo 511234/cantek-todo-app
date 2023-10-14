@@ -45,7 +45,6 @@ function App() {
     }
 
     const handleSubmitSetting = (values) => {
-        console.log('hi are we here')
         setLs(values)
         handleCloseSetting()
     }

@@ -1,5 +1,4 @@
 import {Form, Formik} from "formik";
-import * as dayjs from "dayjs";
 import CATEGORIES from "../categories.ts";
 import {taskSchema} from "../schema/task.ts";
 import {TextField} from "../ui/TextField.tsx";
@@ -15,7 +14,7 @@ interface ITaskForm {
 export const TaskForm = ({handleSubmit, titleRef}: ITaskForm) => {
     return (
         <Formik
-            initialValues={{title: "", dueDate: dayjs().format('YYYY-MM-DD'), category: CATEGORIES[0]}}
+            initialValues={{title: "", dueDate: null, category: CATEGORIES[0]}}
             onSubmit={handleSubmit}
             validationSchema={taskSchema}
         >
