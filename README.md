@@ -1,4 +1,6 @@
-## Typescript + Vite + React To-do app
+# Task Management App
+
+> Tech Stack: Vite, React Bootstrap, Formik, Yup
 
 ### Functionalities
 
