@@ -2,14 +2,14 @@ import Button from 'react-bootstrap/Button';
 import {AiFillDelete} from "react-icons/ai";
 
 interface IEditActionButtons {
-    handleRemove: (i) => void;
-    i: number;
+    handleRemove: (id) => void;
+    id: number;
 }
 
-export const EditActionButtons = ({handleRemove, i}: IEditActionButtons) => {
+export const EditActionButtons = ({handleRemove, id}: IEditActionButtons) => {
     return (<>
         <Button variant="none" className="" type="button"
-                onClick={() => handleRemove(i)}>
+                onClick={() => handleRemove(id)}>
             <AiFillDelete/>
         </Button>
 

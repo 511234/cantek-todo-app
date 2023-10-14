@@ -22,10 +22,10 @@ export const TaskBoard = ({todoLsItems, handleRemove}: ITaskBoardProps) => {
                 </tr>
                 </thead>
                 <tbody>
-                {todoLsItems.map((item, i) =>
+                {todoLsItems.map((item: ITask) =>
                     <TaskRow key={item.title}
                              handleRemove={handleRemove}
-                             i={i} todoItem={item}/>)
+                             id={item.id} todoItem={item}/>)
                 }
                 </tbody>
             </Table>

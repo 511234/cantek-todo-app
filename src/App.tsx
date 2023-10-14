@@ -28,8 +28,8 @@ function App() {
         setShouldShowSetting(false)
     }
 
-    const handleRemove = (i: number) => {
-        const todoItems = todoLsItems.filter((item, index) => i !== index)
+    const handleRemove = (id: number) => {
+        const todoItems = todoLsItems.filter((item) => id !== item.id)
         setTodoLsItems(todoItems)
     }
 
@@ -37,6 +37,7 @@ function App() {
         console.log('values', values)
         const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
         values.dueDate = dayjs(values.dueDate).format("YYYY-MM-DD")
+        values.id = todoItems.length + 1
         todoItems.push(values)
         localStorage.setItem('cantek-todo', JSON.stringify(todoItems))
         setTodoLsItems(todoItems)

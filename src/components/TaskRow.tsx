@@ -4,11 +4,11 @@ import dayjs from "dayjs";
 
 interface ITaskRow {
     handleRemove: (props) => void;
-    i: number;
+    id: number;
     todoItem: ITask
 }
 
-export const TaskRow = ({handleRemove, i, todoItem}: ITaskRow) => {
+export const TaskRow = ({handleRemove, id, todoItem}: ITaskRow) => {
     return (
         <tr>
             <td className="flex-wrap">{todoItem.title}</td>
@@ -16,7 +16,7 @@ export const TaskRow = ({handleRemove, i, todoItem}: ITaskRow) => {
             <td>{todoItem.category}</td>
             <td>
                 <EditActionButtons
-                    handleRemove={handleRemove} i={i}/>
+                    handleRemove={handleRemove} id={id}/>
             </td>
         </tr>
     )
