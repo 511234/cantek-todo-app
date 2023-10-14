@@ -26,15 +26,22 @@ function App() {
     const handleSubmit = (values, {resetForm}) => {
 
         const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
-        console.log('hi 1')
         values.dueDate = dayjs(values.dueDate).format("YYYY-MM-DD")
-        console.log('values.dueDate', values.dueDate)
 
         todoItems.push(values)
+        console.log('hi 1')
         localStorage.setItem('cantek-todo', JSON.stringify(todoItems))
+        console.log('hi 2')
+
         setTodoLsItems(todoItems)
+        console.log('hi 3')
+
         resetForm()
+        console.log('hi 4')
+
         titleRef?.current?.focus()
+        console.log('hi 5')
+
     }
 
     useEffect(() => {
@@ -44,7 +51,7 @@ function App() {
     return (
         <>
             <Formik
-                initialValues={{title: "", dueDate: '', category: CATEGORIES[0]}}
+                initialValues={{title: "", dueDate: dayjs().format('YYYY-MM-DD'), category: CATEGORIES[0]}}
                 onSubmit={handleSubmit}
                 validationSchema={taskSchema}
             >
