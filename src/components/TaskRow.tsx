@@ -3,14 +3,12 @@ import {EditActionButtons} from "../EditActionButtons.tsx";
 import * as dayjs from "dayjs";
 
 interface ITaskRow {
-    handleCancel: () => void;
-    handleConfirm: (props) => void;
     handleRemove: (props) => void;
     i: number;
     todoItem: ITask
 }
 
-export const TaskRow = ({handleCancel, handleConfirm, handleRemove, i, todoItem}: ITaskRow) => {
+export const TaskRow = ({handleRemove, i, todoItem}: ITaskRow) => {
     return (
         <tr>
             <td className="flex-wrap">{todoItem.title}</td>
@@ -18,8 +16,8 @@ export const TaskRow = ({handleCancel, handleConfirm, handleRemove, i, todoItem}
             <td>{todoItem.category}</td>
             <td>
                 <div>
-                    <EditActionButtons handleCancel={handleCancel} handleConfirm={handleConfirm}
-                                       handleRemove={handleRemove} i={i} todoItem={todoItem}/>
+                    <EditActionButtons
+                        handleRemove={handleRemove} i={i}/>
                 </div>
             </td>
         </tr>

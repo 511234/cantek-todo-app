@@ -10,30 +10,13 @@ import {TaskForm} from "./components/TaskForm.tsx";
 function App() {
 
     const [todoLsItems, setTodoLsItems] = useState<ITask[]>(JSON.parse(localStorage.getItem('cantek-todo')) ?? [])
-    const editRef = useRef<HTMLInputElement>()
     const titleRef = useRef<HTMLInputElement>()
 
-    const handleCancel = () => {
-    }
-
-    const handleConfirm = (todoItem: string) => {
-        if (!editRef.current.value) {
-            return
-        }
-        console.log('todoItem', todoItem)
-
-    }
-
-
     const handleRemove = (i: number) => {
-        console.log('handleRemove')
-        console.log('i', i)
         const todoItems = todoLsItems.filter((item, index) => i !== index)
-        console.log('todoItems', todoItems)
         setTodoLsItems(todoItems)
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const handleSubmit = (values, {resetForm}) => {
 
         const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
@@ -68,7 +51,7 @@ function App() {
                     </thead>
                     <tbody>
                     {todoLsItems.map((item, i) =>
-                        <TaskRow key={item.title} handleCancel={handleCancel} handleConfirm={handleConfirm}
+                        <TaskRow key={item.title}
                                  handleRemove={handleRemove}
                                  i={i} todoItem={item}/>)}
                     </tbody>
