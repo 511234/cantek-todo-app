@@ -18,7 +18,7 @@ function App() {
     const [shouldShowSetting, setShouldShowSetting] = useState(false)
     const [todoLsItems, setTodoLsItems] = useState<ITask[]>(JSON.parse(localStorage.getItem('cantek-todo')) ?? [])
     const titleRef = useRef<HTMLInputElement>()
-    const [getLs, setLs] = useLocalStorage(['nickname'])
+    const [, setLs] = useLocalStorage(['nickname'])
 
     const handleCloseModal = () => {
         setShouldShowModal(false)
@@ -48,11 +48,6 @@ function App() {
         setLs(values)
         handleCloseSetting()
     }
-
-    useEffect(() => {
-        console.log('getLs', getLs)
-    }, [])
-
 
     useEffect(() => {
         localStorage.setItem('cantek-todo', JSON.stringify(todoLsItems))

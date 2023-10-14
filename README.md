@@ -1,20 +1,34 @@
 # Task Management App
 
-> Tech Stack: Vite, React Bootstrap, Formik, Yup
+## Functionalities
 
-### Functionalities
+- 📜 Get inspiration from a quote, new every day!
+- 💻 Save your tasks on local storage
+- 📖 Read tips on how to get productive
 
-- Enter task title to list
-- Retrieve task list
-- Delete task from list
-- Store task list on browser local storage
+### Tech Stack & Libraries:
+
+```
+Vite
+React Bootstrap
+Typescript
+Formik
+Yup
+React Cookie  
+```
+
+### Custom Hooks:
+
+```
+useLocalStorage  
+```
 
 ### How to use
 
 1. Input task title and due date. Choose a category
-2. Press 'Add' or hit Enter
+2. Press 'Submit' or hit Enter
 3. View task list on the table
-4. Delete task by pressing 'Remove'
+4. Delete task by hitting the bin
 
 ### Attribution
 
@@ -28,7 +42,7 @@ on <a href="https://unsplash.com/photos/ky0ljKGar78?utm_content=creditCopyText&u
 Unsplash</a>
 <a href="https://www.flaticon.com/free-icons/quote" title="quote icons">Quote icons created by Freepik - Flaticon</a>
 
-### Todos
+### Developer's Remarks
 
 - change board layout (card + shadow)
 - fix task layout
