@@ -2,7 +2,6 @@ import {useEffect, useRef, useState} from 'react'
 import './App.css'
 import {ITask} from "./types";
 import {TaskRow} from "./components/TaskRow.tsx";
-import * as dayjs from "dayjs";
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {TaskForm} from "./components/TaskForm.tsx";
@@ -17,16 +16,17 @@ function App() {
         setTodoLsItems(todoItems)
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const handleSubmit = (values, {resetForm}) => {
-
-        const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
-        values.dueDate = dayjs(values.dueDate).format("YYYY-MM-DD")
-
-        todoItems.push(values)
-        localStorage.setItem('cantek-todo', JSON.stringify(todoItems))
-        setTodoLsItems(todoItems)
-        resetForm()
-        titleRef?.current?.focus()
+        console.log('hiiii')
+        // const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
+        // values.dueDate = dayjs(values.dueDate).format("YYYY-MM-DD")
+        //
+        // todoItems.push(values)
+        // localStorage.setItem('cantek-todo', JSON.stringify(todoItems))
+        // setTodoLsItems(todoItems)
+        // resetForm()
+        // titleRef?.current?.focus()
     }
 
     useEffect(() => {
