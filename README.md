@@ -20,4 +20,11 @@
 
 <a href="https://www.flaticon.com/free-icons/remove" title="remove icons">Remove icons created by alkhalifi design -
 Flaticon</a>  
-<a href="https://www.flaticon.com/free-icons/task" title="task icons">Task icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/task" title="task icons">Task icons created by Freepik - Flaticon</a>  
+Photo
+by <a href="https://unsplash.com/@kundeleknabiegunie?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+Agnieszka Boeske</a>
+on <a href="https://unsplash.com/photos/ky0ljKGar78?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+Unsplash</a>
+<a href="https://www.flaticon.com/free-icons/quote" title="quote icons">Quote icons created by Freepik - Flaticon</a>
+  

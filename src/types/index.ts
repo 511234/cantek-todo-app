@@ -4,3 +4,9 @@ export interface ITask {
     dueDate: string;
     category: string;
 }
+
+export interface IQuoteRes {
+    quote: string;
+    author: string;
+    category: string;
+}

@@ -5,13 +5,14 @@ import {TaskRow} from "./components/TaskRow.tsx";
 import dayjs from "dayjs";
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import {TaskForm} from "./components/TaskForm.tsx";
 import CATEGORIES from "./categories.ts";
 import {taskSchema} from "./schema/task.ts";
 import {Form, Formik} from "formik";
 import {TextField} from "./ui/TextField.tsx";
 import {SelectField} from "./ui/SelectField.tsx";
 import Button from "react-bootstrap/Button";
+import {Greetings} from "./components/Greetings.tsx";
+import {Quote} from "./components/Quote.tsx";
 
 function App() {
 
@@ -41,6 +42,8 @@ function App() {
 
     return (
         <>
+            <Greetings/>
+            <Quote/>
             <Formik
                 initialValues={{title: "", dueDate: dayjs().format('YYYY-MM-DD'), category: CATEGORIES[0]}}
                 onSubmit={handleSubmit}
