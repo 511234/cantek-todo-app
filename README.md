@@ -53,5 +53,5 @@ Unsplash</a>
 - edit task
 - group task view
 - usecontext theme
-- preference: close on creating new task or keep open
 - sort
+- add local time

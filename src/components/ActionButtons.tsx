@@ -37,7 +37,7 @@ export const ActionButtons = ({
                         onClick={handleClickAddTask}/>
                     <RBButton
                         disabled={shouldShowSetting}
-                        label="Set preferences (WIP)"
+                        label="Set preferences"
                         icon={<AiFillSetting/>}
                         onClick={handleClickSetting}
                         variant="outline-secondary"
