@@ -27,20 +27,11 @@ function App() {
 
         const todoItems = JSON.parse(localStorage.getItem('cantek-todo')) ?? []
         values.dueDate = dayjs(values.dueDate).format("YYYY-MM-DD")
-
         todoItems.push(values)
-        console.log('hi 1')
         localStorage.setItem('cantek-todo', JSON.stringify(todoItems))
-        console.log('hi 2')
-
         setTodoLsItems(todoItems)
-        console.log('hi 3')
-
         resetForm()
-        console.log('hi 4')
-
         titleRef?.current?.focus()
-        console.log('hi 5')
 
     }
 
@@ -63,8 +54,9 @@ function App() {
                 </Form>
             </Formik>
 
-            {todoLsItems.length == 0 ? <div>Please Create Tasks</div> :
-                <Table striped bordered hover size="lg" className="text-center">
+            {todoLsItems.length == 0 && <div>Please Create Tasks</div>}
+            {todoLsItems.length > 0 &&
+                <Table striped bordered hover className="text-center">
                     <thead>
                     <tr>
                         <th>Title</th>
