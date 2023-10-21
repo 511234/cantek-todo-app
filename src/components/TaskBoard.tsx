@@ -8,7 +8,7 @@ interface ITaskBoardProps {
 }
 
 export const TaskBoard = ({todoLsItems, handleRemove}: ITaskBoardProps) => {
-    return (<div className="d-flex flex-grow-1 col-md-8 col-12">
+    return (<div className="pt-2 pt-md-0 d-flex flex-grow-1 col-md-8 col-12 justify-content-center">
         {todoLsItems.length == 0 && <div>Please Create Tasks</div>}
         {todoLsItems.length > 0 &&
 
